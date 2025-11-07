@@ -6,7 +6,7 @@ require('dotenv').config();
 const app = express();
 
 // Middleware
-app.use(cors());
+app.use(cors({origin:"http://react-app-sridineshinteriros.shop.s3-website-us-east-1.amazonaws.com"}));
 app.use(express.json());
 
 // MongoDB Connection
