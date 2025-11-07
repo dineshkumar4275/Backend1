@@ -5,11 +5,12 @@ require('dotenv').config();
 
 const app = express();
 
-// CORS Configuration
+// ✅ CORRECT CORS Configuration - Single configuration
 app.use(cors({
   origin: [
+    'http://react-app-sridineshinteriros.shop.s3-website-us-east-1.amazonaws.com', // Your S3 frontend
     'https://sridineshinteriros.shop',
-    'https://www.sridineshinteriros.shop',
+    'https://www.sridineshinteriros.shop', 
     'http://localhost:3000',  // React dev server
     'http://localhost:5000'   // For local development
   ],
@@ -22,7 +23,6 @@ app.use(cors({
 app.options('*', cors());
 
 // Middleware
-app.use(cors({origin:"http://react-app-sridineshinteriros.shop.s3-website-us-east-1.amazonaws.com"}));
 app.use(express.json());
 
 // MongoDB Connection
